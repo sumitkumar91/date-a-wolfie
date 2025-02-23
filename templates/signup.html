@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date-A-Wolfie - Sign Up</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      width: 100%;
+      max-width: 500px;
+      padding: 20px;
+    }
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+    h2 {
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    h3 {
+      font-size: 24px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button[type="submit"] {
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    button[type="submit"]:hover {
+      background-color: #ff4a3d;
+      transform: scale(1.05);
+    }
+    p {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #555;
+    }
+    a {
+      color: #ff6f61;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h2>Date-A-Wolfie</h2>
+      <h3>Sign Up</h3>
+      <form action="/signup" method="POST" enctype="multipart/form-data">
+        <div class="input-group">
+          <label for="name"><i class="fas fa-user"></i> Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="input-group">
+          <label for="email"><i class="fas fa-envelope"></i> Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your SBU email" required>
+        </div>
+        <div class="input-group">
+          <label for="password"><i class="fas fa-lock"></i> Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="8">
+        </div>
+        <div class="input-group">
+          <label for="gender"><i class="fas fa-venus-mars"></i> Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="major"><i class="fas fa-graduation-cap"></i> Major</label>
+          <input type="text" id="major" name="major" placeholder="Enter your major" required>
+        </div>
+        <div class="input-group">
+          <label for="clubs"><i class="fas fa-users"></i> Clubs</label>
+          <input type="text" id="clubs" name="clubs" placeholder="List your clubs (comma separated)" required>
+        </div>
+        <div class="input-group">
+          <label for="bio"><i class="fas fa-pencil-alt"></i> Bio</label>
+          <textarea id="bio" name="bio" placeholder="Tell us about yourself" required></textarea>
+        </div>
+        <div class="input-group">
+          <label for="looking_for"><i class="fas fa-heart"></i> Looking For</label>
+          <select id="looking_for" name="looking_for" required>
+            <option value="Friendship">Friendship</option>
+            <option value="Dating">Dating</option>
+            <option value="Casual Relationship">Casual Relationship</option>
+            <option value="Long-term Relationship">Long-term Relationship</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="sexual_orientation"><i class="fas fa-venus-mars"></i> Sexual Orientation</label>
+          <select id="sexual_orientation" name="sexual_orientation" required>
+            <option value="Straight">Straight</option>
+            <option value="Gay">Gay</option>
+            <option value="Lesbian">Lesbian</option>
+            <option value="Bisexual">Bisexual</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="interests"><i class="fas fa-star"></i> Interests</label>
+          <input type="text" id="interests" name="interests" placeholder="Enter your interests (comma separated)" required>
+        </div>
+        <div class="input-group">
+          <label for="profile_picture"><i class="fas fa-image"></i> Profile Picture</label>
+          <input type="file" id="profile_picture" name="profile_picture">
+        </div>
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a href="/login">Login</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
